@@ -236,57 +236,59 @@
 // Створити під кожен елемент окремий блок.
 // В цьому блоці, під кожну властивість, та властивості внутрішніх об'єктів створити свої окремі блок.
 
-// for (let i = 0; i < usersList.length; i++) {
-//     const user = usersList[i];
-//     let div = document.createElement('div');
-//
-//     let divId = document.createElement('div');
-//     divId.innerText = user.id;
-//
-//     let divName = document.createElement('div');
-//     divName.innerText = user.name;
-//
-//     let divUserName = document.createElement('div');
-//     divUserName.innerText = user.username;
-//
-//     let divEmail = document.createElement('div');
-//     divEmail.innerText = user.email;
-//
-//     const address = document.createElement("div");
-//
-//     for (const item in user.address) {
-//         const temp = document.createElement("div");
-//         temp.innerHTML = user.address[item];
-//         address.appendChild(temp);
-//     }
-//     for (const elem in user.address.geo) {
-//         const temp = document.createElement('div');
-//         temp.innerHTML = user.address.geo[elem];
-//         address.appendChild(temp);
-//     }
-//
-//     let divPhone = document.createElement('div');
-//     divPhone.innerText = user.phone;
-//
-//     let divWebsite = document.createElement('div');
-//     divWebsite.innerText = user.website;
-//
-//     let company = document.createElement('div');
-//
-//     for (const item in user.company) {
-//         const temp = document.createElement("div");
-//         temp.innerHTML = user.company[item];
-//         company.appendChild(temp);
-//     }
-//
-//     div.appendChild(divId);
-//     div.appendChild(divName);
-//     div.appendChild(divUserName);
-//     div.appendChild(divEmail);
-//     div.appendChild(address);
-//     div.appendChild(divPhone);
-//     div.appendChild(divWebsite);
-//     div.appendChild(company);
-//
-//     document.body.appendChild(div);
-// }
+for (let i = 0; i < usersList.length; i++) {
+    const user = usersList[i];
+    let div = document.createElement('div');
+
+    let divId = document.createElement('div');
+    divId.innerText = user.id;
+
+    let divName = document.createElement('div');
+    divName.innerText = user.name;
+
+    let divUserName = document.createElement('div');
+    divUserName.innerText = user.username;
+
+    let divEmail = document.createElement('div');
+    divEmail.innerText = user.email;
+
+    const address = document.createElement("div");
+
+    for (const item in user.address) {
+        const temp = document.createElement("div");
+        if(user.address[item] !== user.address.geo){
+            temp.innerHTML = user.address[item];
+            address.appendChild(temp);
+        }
+    }
+    for (const elem in user.address.geo) {
+        const temp = document.createElement('div');
+        temp.innerHTML = user.address.geo[elem];
+        address.appendChild(temp);
+    }
+
+    let divPhone = document.createElement('div');
+    divPhone.innerText = user.phone;
+
+    let divWebsite = document.createElement('div');
+    divWebsite.innerText = user.website;
+
+    let company = document.createElement('div');
+
+    for (const item in user.company) {
+        const temp = document.createElement("div");
+        temp.innerHTML = user.company[item];
+        company.appendChild(temp);
+    }
+
+    div.appendChild(divId);
+    div.appendChild(divName);
+    div.appendChild(divUserName);
+    div.appendChild(divEmail);
+    div.appendChild(address);
+    div.appendChild(divPhone);
+    div.appendChild(divWebsite);
+    div.appendChild(company);
+
+    document.body.appendChild(div);
+}
