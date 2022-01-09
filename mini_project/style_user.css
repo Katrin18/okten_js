@@ -1,0 +1,39 @@
+/*   user-details.html - блок с информацией про user вверху страницы. Кнопка ниже, на 90% ширины страницы, по центру.*/
+/*блоки с краткой информацией про post - в ряд по 5 объектов.*/
+
+.userDetails{
+    background: pink;
+}
+.title{
+    background: #cfc7c7;
+    float: left;
+    line-height: 50px;
+    color: black;
+    height: 200px;
+    margin-top: 60px;
+    width: 250px;
+    margin-right: 10px;
+    text-align: center;
+    position: relative;
+}
+.btnPost{
+    width: 80px;
+    height: 25px;
+    background: black;
+    color: white;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    margin-left: -25px;
+
+}
+.btn{
+    background: black;
+    color: white;
+    height: 40px;
+    right: 50%;
+    position: absolute;
+}
+.body{
+    position: relative;
+}
